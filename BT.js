@@ -8,10 +8,12 @@ const BS = (l, h, arr, key) => {
   let middle = Math.floor((l + h + 1) / 2);
 
   if (l === h) {
+    // there is only one element in the arr
     if (sArr[h] === key) {
       return true;
     }
   } else {
+    // multiple elements in the array
     if (sArr[middle] === key) {
       return true;
     }
