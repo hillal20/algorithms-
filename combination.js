@@ -19,4 +19,4 @@ const pro = arr => {
   return result;
 };
 
-// console.log(pro(arr));
+console.log(pro(arr));
