@@ -1,19 +1,27 @@
 const str = "billalljsk";
 let x = "";
 let result = [];
-let reverse = [];
+let maxLenght = 0;
+
 var longestPalindrome = function(str) {
   for (let i = 0; i < str.length; i++) {
-    x += str[i];
-    // if( x === x.split('').reverse().join('')){
-    //
-    //      result.push(x)
-    // }
+    x = str[i];
+    for (let j = i + 1; j < str.length; j++) {
+      x += str[j];
+      if (
+        x ===
+        x
+          .split("")
+          .reverse()
+          .join("")
+      ) {
+        if (maxLenght < x.length) {
+          maxLenght = x.length;
+        }
+      }
+    }
   }
 
-  return result;
+  return maxLenght;
 };
 longestPalindrome(str);
-
-// let b = "hilal"
-// console.log(b.split("").reverse().join('').toString())
