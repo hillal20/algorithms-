@@ -1,6 +1,6 @@
 const str = "billalljsk";
 let x = "";
-let result = [];
+
 let maxLenght = 0;
 
 var longestPalindrome = function(str) {
