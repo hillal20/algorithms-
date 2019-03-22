@@ -3,10 +3,13 @@ var maxArea = function(arr) {
   let lines = [];
   let ln = 0;
   let ln2 = 0;
+  let minln = 0;
   let diff = Math.pow(10);
   let maxln = 0;
   let maxlenCor;
+  let maxWtCor;
   let wt = 0;
+  let maxWt = 0;
   for (let i = 0; i < n; i++) {
     lines.push({ startPoint: [i, 0], endPoint: [i, arr[i]] });
   }
@@ -28,9 +31,19 @@ var maxArea = function(arr) {
         Math.pow(lines[j].endPoint[0] - lines[j].startPoint[0], 2) +
           Math.pow(lines[j].endPoint[1] - lines[j].startPoint[1], 2)
       );
+      minln = Math.min(len, len2);
+      //  console.log('minln ===> ', minln)
+      wt = minln * (lines[j].startPoint[0] - lines[i].startPoint[0]);
+      console.log("wt ==> ", wt);
+      if (maxWt < wt) {
+        maxWt = wt;
+        maxWtCor = [maxWt, lines[i], lines[j]];
+      }
     }
   }
 
   console.log(maxlenCor);
+  console.log("maxWt", maxWt);
+  console.log("maxWt", maxWtCor);
 };
 maxArea([6, 3, 5, 7, 8, 9, 4, 3, 2]);
