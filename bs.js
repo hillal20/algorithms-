@@ -23,10 +23,9 @@ const bs = (l, h, key, arr) => {
 
     if (arr[middle] > key) {
       bs(l, middle - 1, key, arr);
+    } else if (arr[middle] < key) {
+      bs(middle + 1, h, key, arr);
     }
-    //  else if ( arr[middle] < key ){
-    //      bs(middle +1 , h , key , arr)
-    // }
   }
 
   return false;
