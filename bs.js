@@ -1,7 +1,7 @@
 const array = [1, 6, 3];
 const bs = (l, h, key, arr) => {
   arr.sort();
-
+  let middle = Math.floor((l + h) / 2);
   if (l === h) {
     if (arr[l] === key) {
       return true;
@@ -9,8 +9,6 @@ const bs = (l, h, key, arr) => {
       return false;
     }
   } else {
-    let middle = Math.floor((l + h) / 2);
-
     if (arr[middle] === key) {
       return true;
     }
