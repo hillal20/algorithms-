@@ -6,12 +6,13 @@ const telefone = string => {
 
   const helper = (str, rounds) => {
     if (rounds === 0) {
+      result.push(combination);
       return;
     }
 
     for (let i = 0; i < array.length; i++) {
       combination = str + array[i];
-      result.push(combination);
+
       helper(combination, rounds - 1);
     }
   };
