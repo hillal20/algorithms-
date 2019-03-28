@@ -18,8 +18,6 @@ const telefone = string => {
   };
   helper("", 3);
 
-  return result.filter(e => {
-    return e.length === 3;
-  });
+  return result;
 };
 telefone(array);
